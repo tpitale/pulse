@@ -8,10 +8,14 @@
 class Poller
   def initialize(parent)
     @parent = parent
+    @user = User.new
   end
 
   def request
-    Request.new("http://google.com", success, failure)
+    p @user.api_key
+    Request.new("http://ls-dna-lab.herokuapp.com/version", success, failure, {
+      'API_KEY' => @user.api_key
+    })
   end
 
   def perform_request(timer)
@@ -24,7 +28,9 @@ class Poller
 
   def success
     Proc.new {|response|
-      @parent.trigger_update_available
+      if response && @user.update_version!(response)
+        @parent.trigger_update_available
+      end
     }
   end
 
@@ -34,8 +40,14 @@ class Poller
 end
 
 class Request
-  def initialize(url, success, failure=nil)
-    @request = NSURLRequest.requestWithURL(NSURL.URLWithString(url))
+  def initialize(url, success, failure=nil, headers={})
+    @request = NSMutableURLRequest.alloc.init
+    @request.setURL NSURL.URLWithString(url)
+
+    headers.each do |k,v|
+      @request.setValue(v.to_s, forHTTPHeaderField: k.to_s)
+    end
+
     @success = success
     @failure = failure
     # @parser = Yajl::Parser.new(:symbolize_keys => true)

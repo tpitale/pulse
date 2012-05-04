@@ -13,7 +13,8 @@ class AppDelegate
     # setup_menu # programmatic?
     setup_images
     create_status_item
-    Poller.new(self).start
+    @poller = Poller.new(self)
+    @poller.start
   end
 
   # def setup_menu
@@ -60,15 +61,35 @@ class AppDelegate
   def trigger_update_available
     menu_item = menu.itemAtIndex(0)
     menu_item.title = "Update Available"
+    menu_item.action = "handle_update:"
     set_highlight_image
   end
 
   def help(sender)
     # open a url in the default browser
+    open_in_browser "http://github.com/bleything/bootstrap/readme.md"
+  end
+
+  def check_for_update(sender)
+    @poller.perform_request(nil)
+  end
+
+  def handle_update(sender)
+    # open a url to dna-lab
+    open_in_browser "http://ls-dna-lab.herokuapp.com/"
+
+    menu_item = menu.itemAtIndex(0)
+    menu_item.title = "Update"
+    menu_item.action = "check_for_update:"
+    set_default_image
   end
 
   def highlight(sender)
     set_highlight_image
+  end
+
+  def open_in_browser(str)
+    NSWorkspace.sharedWorkspace.openURL(NSURL.URLWithString(str))
   end
 
   def quit(sender)

@@ -22,6 +22,16 @@ class User
     @defaults.setObject(version, forKey:"latest_version")
   end
 
+  def update_version!(new_version)
+    if latest_version == new_version
+      false
+    else
+      self.latest_version = new_version
+      save
+      true
+    end
+  end
+
   def save
     @defaults.synchronize
   end
