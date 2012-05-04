@@ -23,3 +23,5 @@ end
 
 # Starting the Cocoa main loop.
 NSApplicationMain(0, nil)
+
+User.new.save

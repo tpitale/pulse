@@ -18,6 +18,7 @@
 		4C3DD871155362C1002EFC56 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3DD86F155362C1002EFC56 /* default.png */; };
 		4C3DD872155362C1002EFC56 /* alternate.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3DD870155362C1002EFC56 /* alternate.png */; };
 		4C3DD8741553642B002EFC56 /* highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3DD8731553642B002EFC56 /* highlight.png */; };
+		4C99419E1553F35D003C9E4C /* user.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4C99419D1553F35D003C9E4C /* user.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		4C3DD86F155362C1002EFC56 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		4C3DD870155362C1002EFC56 /* alternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alternate.png; sourceTree = "<group>"; };
 		4C3DD8731553642B002EFC56 /* highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highlight.png; sourceTree = "<group>"; };
+		4C99419D1553F35D003C9E4C /* user.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = user.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				4C1C8CAF15533DF90021471A /* Other Sources */,
 				4C1C8CA315533DF90021471A /* Supporting Files */,
 				4C1C8CC415534F170021471A /* poller.rb */,
+				4C99419D1553F35D003C9E4C /* user.rb */,
 			);
 			path = pulse;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				4C3DD871155362C1002EFC56 /* default.png in Resources */,
 				4C3DD872155362C1002EFC56 /* alternate.png in Resources */,
 				4C3DD8741553642B002EFC56 /* highlight.png in Resources */,
+				4C99419E1553F35D003C9E4C /* user.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
