@@ -6,6 +6,7 @@ Download Xcode from the Mac App Store for free.
 
 [MacRuby Latest Nightly Download](http://www.macruby.org/files/nightlies/macruby_nightly-latest.pkg)
 
-# Build and Run #
+# Clone, Build, and Run #
 
-```cd pulse && open pulse.xcodeproj```
+```git clone git@github.com:tpitale/pulse.git
+cd pulse && open pulse.xcodeproj```
