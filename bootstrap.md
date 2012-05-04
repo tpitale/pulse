@@ -8,6 +8,6 @@ Download Xcode from the Mac App Store for free.
 
 # Clone, Build, and Run #
 
-```git clone git@github.com:tpitale/pulse.git
+```git clone git@github.com:tpitale/pulse.git```
 
-cd pulse && open pulse.xcodeproj```
+```cd pulse && open pulse.xcodeproj```
