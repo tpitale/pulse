@@ -9,10 +9,10 @@ class Poller
   def initialize(parent)
     @parent = parent
     @user = User.new
+    p @user.api_key
   end
 
   def request
-    p @user.api_key
     Request.new("http://ls-dna-lab.herokuapp.com/version", success, failure, {
       'API_KEY' => @user.api_key
     })

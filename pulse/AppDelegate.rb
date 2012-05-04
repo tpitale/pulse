@@ -76,7 +76,7 @@ class AppDelegate
 
   def handle_update(sender)
     # open a url to dna-lab
-    open_in_browser "http://ls-dna-lab.herokuapp.com/"
+    open_in_browser "http://ls-dna-lab.herokuapp.com/configs"
 
     menu_item = menu.itemAtIndex(0)
     menu_item.title = "Update"
